@@ -1,0 +1,79 @@
+.footer
+    background-image: url('../img/bg-footer.jpg')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.footer-nav
+    margin-bottom: 1em
+
+.footer-nav-title
+    font-size: 1rem
+    color: $text-white
+    margin-top: 0
+    margin-bottom: 1em
+
+.footer-nav-list
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+    a
+        font-size: 0.9rem
+        color: $text-lgrey
+        @extend %transition
+
+        &:hover, &:focus
+            color: lighten($text-grey, 15%)
+            text-decoration: none
+
+        img
+            opacity: 0.6
+            &:hover, &:focus
+                opacity: 0.8
+
+    &.payment-list, &.social-list
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        justify-content: flex-start
+
+        li
+            &:not(:first-child)
+                margin-left: 1em
+
+.social--icon
+    font-size: 1rem
+    width: 1.5em
+    height: 1.5em
+    line-height: 1.5em
+    text-align: center
+    @extend %transition
+    &:hover, &:focus
+        background: darken($bg-light, 10%)
+        color: darken($text-lgrey, 20%)
+        border-radius: 50%
+
+.copyright
+    background-color: $bg-dark
+
+.copyright--inner
+    display: flex
+    padding: 1em 0
+    align-items: center
+    justify-content: space-between
+    @media (min-width: 48rem)
+        padding: 1em
+
+.footer--logo
+    max-width: 75px
+    @media (min-width: 48rem)
+        max-width: 60px
+
+.copyright--text
+    @include font-type($ff-sec, $fw-normal)
+    color: darken($text-white, 10%)
+    font-size: 0.8rem
+    margin: 0
+    text-align: right
+

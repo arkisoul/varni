@@ -1,0 +1,106 @@
+.top-bar
+    display: flex
+    flex-direction: row
+    flex-flow: wrap
+    justify-content: space-between
+    padding: 1em
+    background-color: $bg-dark
+    color: $text-white
+    text-align: center
+    font-size: 0.8rem
+
+    p
+        margin-bottom: 0
+
+    @media (min-width: 36rem)
+        flex-direction: row
+        align-items: center
+
+
+.tb--icon
+    color: $nav-icon
+    font-size: 1rem
+    @media (min-width: 62rem)
+        font-size: 1.25rem
+
+.tb--left
+    display: flex
+    justify-content: center
+    margin-bottom: 1em
+
+    @media (min-width: 48rem)
+        margin-bottom: 0
+        justify-content: flex-start
+
+.tb-dropdown
+    .btn
+        color: $text-white
+        padding: 0
+        background: none
+        font-size: 0.8rem
+
+.tb--center
+    max-width: 150px
+    margin-bottom: 1em
+    @media (min-width: 36rem)
+        max-width: 200px
+    @media (min-width: 48rem)
+        margin-bottom: 0
+        max-width: 150px
+    @media (min-width: 62rem)
+        max-width: 200px
+
+.tb--right
+    width: 100%
+    @media (min-width: 36rem)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 0
+    @media (min-width: 48rem)
+        width: auto
+
+.menu-whatsapp
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 1em
+
+    p
+        margin-bottom: 0
+    span
+        margin-left: 1em
+        @media (min-width: 48rem)
+            display: block
+            margin: auto
+    @media (min-width: 36rem)
+        margin-bottom: 0
+    @media (min-width: 48rem)
+        margin-right: 1em
+
+.menu-account
+    display: flex
+    align-items: center
+    justify-content: center
+
+.menu-auth
+    margin-right: 0.8em
+    a
+        text-decoration: none
+        color: $text-white
+        @extend %transition
+        &:hover, &:focus
+            color: darken($text-white, 10%)
+
+.menu-track
+    a
+        color: $text-white
+        @extend %transition
+        &:hover, &:focus
+            color: darken($text-white, 10%)
+            text-decoration: none
+
+.menu-cart
+    .tb--icon
+        margin-right: 0
+        margin-left: 0.7em

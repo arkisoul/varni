@@ -1,0 +1,42 @@
+.section-combos
+    margin-bottom: 1.5em
+
+.combo-pills
+    position: relative
+    padding-bottom: 1em
+    margin-bottom: 0.75em
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        height: 2px
+        width: 100vw
+        left: 50%
+        transform: translateX(-50%)
+        background-color: $bg-secondary
+        margin-top: 1em
+        opacity: 0.6
+        bottom: 0
+
+        @media (min-width: 48rem)
+            max-width: 90rem
+            width: calc(100% + 1.75em)
+
+    .nav-item
+        flex-basis: 100%
+        text-align: center
+        @media (min-width: 48rem)
+            flex-basis: auto
+
+    .nav-link
+        @extend %transition
+        text-transform: uppercase
+        font-size: 1rem
+        color: lighten($text-dark, 5%)
+        font-weight: $fw-bold
+        &.active, &:hover, &:focus
+            background-color: transparent
+            color: darken($text-dark, 5%)
+
+    @media (min-width: 48rem)
+        justify-content: space-around

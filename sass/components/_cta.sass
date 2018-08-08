@@ -1,0 +1,54 @@
+.cta
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 1em 0
+    border-bottom: 1px solid $grey
+    margin-bottom: 2.5em
+    @media (min-width: 48rem)
+        flex-direction: row
+        flex-wrap: wrap
+        margin-bottom: 3em
+
+.cta--title
+    font-size: 0.9rem
+    text-transform: uppercase
+    letter-spacing: 2px
+    line-height: 1
+    color: $text-white
+    margin-bottom: 1em
+    @media (min-width: 48rem)
+        width: 100%
+        text-align: center
+    @media (min-width: 62rem)
+        margin-right: 2em
+        margin-bottom: 0
+        text-align: left
+        width: auto
+
+.cta--form
+    justify-content: center
+    text-align: center
+
+    label
+        color: $text-lgrey
+        font-size: 0.8rem
+        @media (min-width: 36rem)
+            margin-right: 2em
+            margin-bottom: 1em
+        @media (min-width: 729px)
+            margin-bottom: 0
+
+    .form-control
+        background-color: $bg-grey
+        color: $text-white
+        margin-bottom: 1em
+        @media (min-width: 690px)
+            margin-right: 2em
+        @media (min-width: 729px)
+            margin-bottom: 0
+
+        &::placeholder
+            font-size: 0.7rem
+            color: $text-lgrey

@@ -1,0 +1,66 @@
+.product--item
+    margin: 0 0 0
+    padding: 0.5em
+
+.product--img
+    border: 6px solid $border-light
+    margin-bottom: 1em
+
+.product--info
+    text-align: center
+    color: $text-dark
+
+.product--name
+    font-size: 0.9rem
+    font-weight: $fw-normal
+    margin-bottom: 0.25em
+
+.product--price
+    font-size: 0.9rem
+    font-weight: $fw-bold
+    margin-bottom: 0.35em
+
+.product--rating
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 0
+
+.product--icon
+    color: $rate-icon
+    font-size: 0.9rem
+    padding: 0 0.1em
+
+.owl-theme, .owl-carousel
+    .owl-item
+        img
+            object-fit: cover
+    .owl-nav
+        position: absolute;
+        left: -1em
+        right: -1em
+        top: 50%
+        transform: translateY(-50%)
+        margin: 0
+        z-index: 1
+        display: flex!important
+        justify-content: space-between
+
+        button.owl-next, button.owl-prev
+            &:hover, &:focus
+                background: none
+                outline: none
+            span
+                font-size: 4rem
+                font-weight: $fw-light
+                color: $text-secondary
+
+    &.ow--inside
+        .owl-nav
+            left: 0.75em
+            right: 0.75em
+    &.ow--small
+        .owl-nav
+            button.owl-next, button.owl-prev
+                span
+                    font-size: 2rem

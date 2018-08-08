@@ -1,0 +1,31 @@
+{
+  "name": "varni",
+  "version": "1.0.0",
+  "description": "e-commerce website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arkisoul/varni.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "SASS",
+    "e-commerce",
+    "Website",
+    "Development"
+  ],
+  "author": "Arpit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arkisoul/varni/issues"
+  },
+  "homepage": "https://github.com/arkisoul/varni/",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
+}

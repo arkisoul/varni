@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Raleway");
-.dropdown-menu .dropdown-item, .menu-auth a, .menu-track a, .header-menu .btn-group .btn, .combo-pills .nav-link, .footer-nav-list a, .social--icon, .btn-brand {
+.dropdown-menu .dropdown-item, .menu-auth a, .menu-track a, .header-menu .btn-group .btn, .mem-plan--item, .combo-pills .nav-link, .footer-nav-list a, .social--icon, .btn-brand, .product--item::before, .product--item::after {
   -webkit-transition: all ease-in-out 300ms;
   -o-transition: all ease-in-out 300ms;
   transition: all ease-in-out 300ms; }
@@ -365,7 +365,8 @@ textarea {
       background: none; }
       .header-menu .btn-group .btn:focus, .header-menu .btn-group .btn:active, .header-menu .btn-group .btn:hover {
         outline: none;
-        color: gray; }
+        color: gray;
+        background: rgba(0, 0, 0, 0.05); }
       .header-menu .btn-group .btn:last-child {
         border-bottom: none; }
       .header-menu .btn-group .btn::after {
@@ -436,7 +437,9 @@ textarea {
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -webkit-perspective: 1000px;
+  perspective: 1000px; }
   @media (min-width: 62rem) {
     .header-mem-plans {
       padding: 0.4em; } }
@@ -493,6 +496,11 @@ textarea {
   padding: 0.75em;
   text-align: center;
   height: 100%; }
+  .mem-plan--item:hover, .mem-plan--item:focus {
+    -webkit-transform: scale(1.1) translateZ(1px);
+    transform: scale(1.1) translateZ(1px);
+    -webkit-box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.2); }
   .mem-plan--item h3 {
     font-size: 1rem;
     line-height: 1;
@@ -582,7 +590,7 @@ textarea {
     .form-enquiry {
       margin: 0; } }
 
-.form--title {
+.form--title, .vid--title {
   font-size: 1.25rem;
   margin: 0 auto 0.75em;
   padding: 0.75em;
@@ -590,9 +598,6 @@ textarea {
   color: #ffffff;
   max-width: 500px;
   text-align: center; }
-  @media (min-width: 48rem) {
-    .form--title {
-      font-size: 1.25rem; } }
 
 .vid-player {
   margin: 0 -1em;
@@ -603,26 +608,35 @@ textarea {
     height: auto; }
   @media (min-width: 48rem) {
     .vid-player {
-      padding: 1rem; } }
+      padding: 0 1em 1em; } }
   @media (min-width: 62rem) {
     .vid-player {
       margin: 0;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
       height: 100%; } }
+
+.vid--title {
+  width: 100%; }
 
 .footer {
   background-image: url("../img/bg-footer.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-blend-mode: overlay; }
 
 .footer-nav {
   margin-bottom: 1em; }
@@ -659,8 +673,8 @@ textarea {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start; }
-    .footer-nav-list.payment-list li:not(:first-child), .footer-nav-list.social-list li:not(:first-child) {
-      margin-left: 1em; }
+    .footer-nav-list.payment-list li:not(:last-child), .footer-nav-list.social-list li:not(:last-child) {
+      margin-right: 1em; }
 
 .social--icon {
   font-size: 1rem;
@@ -680,6 +694,8 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 1em 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -703,6 +719,28 @@ textarea {
   color: #e6e6e6;
   font-size: 0.8rem;
   margin: 0;
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
+  margin-top: 1em; }
+  @media (min-width: 30rem) {
+    .copyright--text {
+      -webkit-box-ordinal-group: initial;
+      -ms-flex-order: initial;
+      order: initial;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+      margin-top: 0; } }
+
+.gstin {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #e6e6e6;
+  font-size: 0.8rem;
+  margin: 0;
   text-align: right; }
 
 .btn-brand {
@@ -711,7 +749,9 @@ textarea {
   border-radius: 0px; }
   .btn-brand:hover, .btn-brand:focus {
     background-color: #0071e6;
-    color: #ffffff; }
+    color: #ffffff;
+    -webkit-box-shadow: 0 0 1.5em 0.25em rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 1.5em 0.25em rgba(0, 0, 0, 0.15); }
 
 .cta {
   display: -webkit-box;
@@ -797,12 +837,40 @@ textarea {
       color: #a6a6a6; }
 
 .product--item {
-  margin: 0 0 0;
-  padding: 0.5em; }
+  margin: 0 0.25em 0;
+  padding: 0.5em;
+  position: relative; }
+  .product--item::before, .product--item::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    right: 0.25em;
+    left: 0.25em;
+    top: 0;
+    bottom: 0; }
+  .product--item::before {
+    border-top: 2px solid #652d91;
+    border-bottom: 2px solid #652d91;
+    -webkit-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    transform: scale(0, 1); }
+  .product--item::after {
+    border-left: 2px solid #652d91;
+    border-right: 2px solid #652d91;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    transform: scale(1, 0); }
+  .product--item:hover::before, .product--item:hover::after {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1); }
 
 .product--img {
   border: 6px solid #f7f7f7;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  -o-object-fit: cover;
+  object-fit: cover; }
 
 .product--info {
   text-align: center;
@@ -840,21 +908,21 @@ textarea {
   object-fit: cover; }
 
 .owl-theme .owl-nav, .owl-carousel .owl-nav {
-  position: absolute;
-  left: -1em;
-  right: -1em;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin: 0;
-  z-index: 1;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
-  display: flex !important;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between; }
+  display: flex !important; }
+  .owl-theme .owl-nav button.owl-next, .owl-theme .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 35%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0;
+    z-index: 1; }
+  .owl-theme .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-next {
+    right: -1em; }
+  .owl-theme .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-prev {
+    left: -1em; }
   .owl-theme .owl-nav button.owl-next:hover, .owl-theme .owl-nav button.owl-next:focus, .owl-theme .owl-nav button.owl-prev:hover, .owl-theme .owl-nav button.owl-prev:focus, .owl-carousel .owl-nav button.owl-next:hover, .owl-carousel .owl-nav button.owl-next:focus, .owl-carousel .owl-nav button.owl-prev:hover, .owl-carousel .owl-nav button.owl-prev:focus {
     background: none;
     outline: none; }
@@ -863,9 +931,13 @@ textarea {
     font-weight: 300;
     color: #652d91; }
 
-.owl-theme.ow--inside .owl-nav, .owl-carousel.ow--inside .owl-nav {
-  left: 0.75em;
-  right: 0.75em; }
+.owl-theme.ow--inside .owl-nav button.owl-next, .owl-carousel.ow--inside .owl-nav button.owl-next {
+  top: 50%;
+  right: .75em; }
+
+.owl-theme.ow--inside .owl-nav button.owl-prev, .owl-carousel.ow--inside .owl-nav button.owl-prev {
+  top: 50%;
+  left: .75em; }
 
 .owl-theme.ow--small .owl-nav button.owl-next span, .owl-theme.ow--small .owl-nav button.owl-prev span, .owl-carousel.ow--small .owl-nav button.owl-next span, .owl-carousel.ow--small .owl-nav button.owl-prev span {
   font-size: 2rem; }

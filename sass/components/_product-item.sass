@@ -1,10 +1,37 @@
 .product--item
-    margin: 0 0 0
+    margin: 0 0.25em 0
     padding: 0.5em
+    position: relative
+
+    &::before, &::after
+        content: ''
+        position: absolute
+        display: block
+        height: 100%
+        right: 0.25em
+        left: 0.25em
+        top: 0
+        bottom: 0
+        @extend %transition
+
+    &::before
+        border-top: 2px solid $border-secondary
+        border-bottom: 2px solid $border-secondary
+        transform: scale(0, 1)
+
+    &::after
+        border-left: 2px solid $border-secondary
+        border-right: 2px solid $border-secondary
+        transform: scale(1, 0)
+
+    &:hover
+        &::before, &::after
+            transform: scale(1, 1)
 
 .product--img
     border: 6px solid $border-light
     margin-bottom: 1em
+    object-fit: cover
 
 .product--info
     text-align: center
@@ -36,15 +63,20 @@
         img
             object-fit: cover
     .owl-nav
-        position: absolute;
-        left: -1em
-        right: -1em
-        top: 50%
-        transform: translateY(-50%)
-        margin: 0
-        z-index: 1
         display: flex!important
-        justify-content: space-between
+        button.owl-next, button.owl-prev
+            position: absolute;
+            top: 35%
+            transform: translateY(-50%)
+            margin: 0
+            z-index: 1
+            // justify-content: space-between
+
+        button.owl-next
+            right: -1em
+
+        button.owl-prev
+            left: -1em
 
         button.owl-next, button.owl-prev
             &:hover, &:focus
@@ -57,8 +89,14 @@
 
     &.ow--inside
         .owl-nav
-            left: 0.75em
-            right: 0.75em
+            button.owl-next
+                top: 50%
+                right: .75em
+
+            button.owl-prev
+                top: 50%
+                left: .75em
+
     &.ow--small
         .owl-nav
             button.owl-next, button.owl-prev

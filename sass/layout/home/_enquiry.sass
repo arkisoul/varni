@@ -23,8 +23,6 @@
     color: $text-white
     max-width: 500px
     text-align: center
-    @media (min-width: 48rem)
-        font-size: 1.25rem
 
 .vid-player
     margin: 0 -1em
@@ -36,11 +34,16 @@
         height: auto
 
     @media (min-width: 48rem)
-        padding: 1rem
+        padding: 0 1em 1em
 
     @media (min-width: 62rem)
         margin: 0
         display: flex
+        flex-direction: column
         align-items: center
-        justify-content: center
+        justify-content: flex-start
         height: 100%
+
+.vid--title
+    @extend .form--title
+    width: 100%

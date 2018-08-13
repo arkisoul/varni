@@ -1,13 +1,32 @@
 body
     @include font-type($ff-main, $fw-normal)
     font-size: 1rem;
-    background-color: $body-bg
+    background: linear-gradient(to bottom right, lighten($bg-primary, 40%), lighten($bg-secondary, 40%))
     padding: 0
     margin: 0
     height: 100%
     width: 100%
     overflow-x: hidden
     overflow-y: scroll
+
+.row
+    margin-left: 0em
+    margin-right: 0em
+
+    &> :first-child
+        padding-left: 0
+
+    &> :last-child
+        padding-right: 0
+
+@for $i from 1 through 12
+    .col-xl-#{$i}, .col-lg-#{$i}, .col-md-#{$i}, .col-sm-#{$i}, .col-xs-#{$i}
+        padding-left: 0
+        padding-right: 0
+
+        @media (min-width: 36rem)
+            padding-left: .5em
+            padding-right: .5em
 
 .main
     margin: auto
@@ -68,3 +87,11 @@ textarea
 
         &:hover, &:focus
             background-color: $bg-secondary
+
+.unstyled-list
+    padding: 0
+    margin: 0
+    list-style-type: none
+
+.bg-light
+    background: $bg-light!important

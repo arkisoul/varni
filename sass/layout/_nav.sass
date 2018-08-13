@@ -42,6 +42,18 @@
             letter-spacing: 1px
             color: $text-white
             font-size: 0.9rem
+            @extend %transition
+
+            &:focus, &:hover, &.active
+                border-radius: 0.25em
+                background: lighten($bg-secondary, 10%)
+                color: $text-white
+
+        &.active
+            .nav-link
+                border-radius: 0.25em
+                background: lighten($bg-secondary, 10%)
+                color: $text-white
 
         @media (min-width: 62rem)
             flex: 0 0 auto

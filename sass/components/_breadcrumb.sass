@@ -1,0 +1,15 @@
+.breadcrumb
+    background-color: $bg-light
+    padding: 0.75em 0.5em 0.75em 1.5em
+
+    .breadcrumb-item
+        font-size: 0.8rem
+
+        &+.breadcrumb-item::before
+            content: '>'
+
+        a
+            font-size: 0.8rem
+
+    @media (min-width: 48rem)
+        margin: auto

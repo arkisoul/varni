@@ -32,12 +32,12 @@ $(document).ready(function() {
         }
     })
 
-    $('.combo-slider, .trending-slider, .recent-slider').owlCarousel({
+    $('.combo-slider, .trending-slider, .recent-slider, .similar-products').owlCarousel({
         loop: true,
         margin: 0,
         nav: true,
         dots: false,
-        autoplay: false,
+        autoplay: true,
         responsive: {
             0: {
                 items: 1
@@ -68,4 +68,19 @@ $(document).ready(function() {
     }, function () {
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     });
+});
+
+//Example where thumbs go before main image
+var instance = $('.xzoom').xzoom({
+    zoomWidth:512,
+    zoomHeight:512,
+    lensCollision:true,
+    defaultScale:1, //100%
+    smoothScale:6,
+    smoothZoomMove:1,
+    Xoffset: 16,
+    scroll: false,
+}); //<-- your options here
+$('.xzoom-gallery').each(function(){
+    instance.xappend($(this));
 });

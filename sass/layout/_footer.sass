@@ -1,9 +1,9 @@
 .footer
-    background-image: url('../img/bg-footer.jpg')
+    background-image: url('../img/bg-footer2.jpg')
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-    background-color: rgba(0,0,0,0.25)
+    background-color: rgba(0,0,0,0.8)
     background-blend-mode: overlay
 
 .footer-nav
@@ -70,8 +70,6 @@
 
 .footer--logo
     max-width: 75px
-    @media (min-width: 48rem)
-        max-width: 60px
 
 .copyright--text
     @include font-type($ff-sec, $fw-normal)
@@ -88,8 +86,10 @@
         margin-top: 0
 
 .gstin
-    @include font-type($ff-sec, $fw-normal)
-    color: darken($text-white, 10%)
-    font-size: 0.8rem
+    @include font-type($ff-main, $fw-light)
+    color: $text-white
+    font-size: 0.9rem
     margin: 0
     text-align: right
+    text-transform: uppercase
+    letter-spacing: 1px

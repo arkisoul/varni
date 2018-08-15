@@ -21,6 +21,16 @@
     color: $text-white
     @extend %transition
 
+    &:hover, &:focus
+        text-decoration: none
+        color: $text-accent
+
+        .tb--icon
+            background: $bg-accent
+            color: $text-white
+            border-radius: 50%
+            transfrom: scale(1.1)
+
     @media (min-width: 62rem)
         display: inline-block
         font-size: 0.8rem

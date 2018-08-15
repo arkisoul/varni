@@ -71,16 +71,14 @@ $(document).ready(function() {
 });
 
 //Example where thumbs go before main image
-var instance = $('.xzoom').xzoom({
-    zoomWidth:512,
-    zoomHeight:512,
+var instance = $('.xzoom, .xzoom-gallery').xzoom({
     lensCollision:true,
-    defaultScale:1, //100%
-    smoothScale:6,
-    smoothZoomMove:1,
+    openOnSmall: false,
+    defaultScale: -0.5,
     Xoffset: 16,
-    scroll: false,
+    scroll: true,
+    tint: '#652d91'
 }); //<-- your options here
-$('.xzoom-gallery').each(function(){
-    instance.xappend($(this));
-});
+// $('.xzoom-gallery').each(function(){
+//     instance.xappend($(this));
+// });

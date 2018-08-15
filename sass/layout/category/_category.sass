@@ -92,6 +92,21 @@
         padding: 0.5em 0.15em
         display: flex
         justify-content: center
+        overflow: hidden
+
+        &:hover, &:focus
+            box-shadow: 0 0 1em rgba(0,0,0,0.25)
+            z-index: 2
+            border-radius: .25em
+
+            .product--item
+                overflow: hidden
+                &::before, &::after
+                    transform: scale(1,1)
+            .product--action
+                z-index: 1
+                transform: translateY(0)
+                opacity: 1
 
         @media (min-width: 30rem)
             flex: 0 0 calc(50%)
@@ -101,3 +116,49 @@
 
         @media (min-width: 75rem)
             flex: 0 0 calc(25%)
+
+.product--action
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin-top: 1em
+    @extend %transition
+
+    @media (min-width: 48rem)
+        width: auto
+        position: absolute
+        bottom: 0em
+        left: 0.25em
+        right: 0.25em
+        margin-top: 0
+        opacity: 0
+        transform: translateY(100%)
+
+    &> button:not(:last-child)
+        border-right: 1px solid $border-light
+
+.product--quick-view, .product--wishlist
+    font-size: 0.8rem
+    background: $bg-secondary
+    box-shadow: none
+    border: none
+    text-align: center
+    padding: 0.75em 0.5em
+    color: darken($text-white, 10%)
+    box-sizing: border-box
+    @extend %transition
+
+    &:hover, &:focus
+        color: $text-white
+        background: lighten($bg-secondary, 10%)
+        cursor: pointer
+
+        i.fa
+            @extend %transition
+            color: red
+
+.product--quick-view
+    flex: 0 0 75%
+
+.product--wishlist
+    flex: 0 0 25%
